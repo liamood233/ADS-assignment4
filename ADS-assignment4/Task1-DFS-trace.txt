@@ -1,0 +1,28 @@
+Task 1 – DFS from A
+
+Graph neighbors (given):
+A: C, B, D
+B: A, C, E, G
+C: A, B, D
+D: C, A
+E: G, F, B
+F: G, E
+G: F, B
+
+DFS steps:
+
+Start A. Mark visited.
+Go to first neighbor C.
+C -> go to B (A already visited).
+B -> go to E (A, C visited).
+E -> go to G.
+G -> go to F.
+F has no unvisited neighbors, back to G.
+G no new neighbors, back to E.
+E no new, back to B.
+B: next neighbor after E is G (visited), back to C.
+C: next after B is D (not visited yet) -> go to D.
+D all neighbors visited, back to C, then back to A.
+Done.
+
+Order visited: A, C, B, E, G, F, D

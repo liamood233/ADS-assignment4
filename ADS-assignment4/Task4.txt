@@ -1,0 +1,39 @@
+Task 4 – Shortest path Edinburgh to Dundee
+
+Road distances (miles, undirected):
+
+Edinburgh – Glasgow : 44
+Edinburgh – Stirling: 36
+Glasgow   – Stirling: 26
+Stirling  – Perth   : 31
+Perth     – Dundee  : 22
+
+No direct Edinburgh-Dundee road.
+
+Dijkstra steps:
+
+Set distances: Edinburgh=0, others=inf.
+
+1. Pick Edinburgh (0).
+   Update Glasgow = 44, Stirling = 36.
+   Priority queue: (Stirling,36), (Glasgow,44)
+
+2. Pick Stirling (36).
+   Update Perth = 36+31 = 67.
+   Glasgow via Stirling = 62 (worse than 44). No change.
+   Queue: (Glasgow,44), (Perth,67)
+
+3. Pick Glasgow (44).
+   Edinburgh via Glasgow = 88 (worse). Stirling via Glasgow = 70 (worse).
+   Queue: (Perth,67)
+
+4. Pick Perth (67).
+   Update Dundee = 67+22 = 89.
+   Queue: (Dundee,89)
+
+5. Pick Dundee – stop.
+
+Trace back: Dundee <- Perth <- Stirling <- Edinburgh
+
+So path: Edinburgh → Stirling → Perth → Dundee
+Total distance: 89 miles

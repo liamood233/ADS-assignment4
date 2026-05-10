@@ -1,0 +1,24 @@
+Task 2 – BFS from A
+
+Same graph.(task1)
+
+Queue and visited sets:
+
+Start queue = [A], visited = {A}
+
+Dequeue A -> add its neighbors C, B, D to queue.
+Queue = [C, B, D], visited = {A, C, B, D}
+
+Dequeue C -> all its neighbors already visited. Queue = [B, D]
+
+Dequeue B -> add new neighbors E, G. Queue = [D, E, G], visited adds E, G -> {A,C,B,D,E,G}
+
+Dequeue D -> neighbors visited. Queue = [E, G]
+
+Dequeue E -> add new neighbor F. Queue = [G, F], visited adds F -> {A,C,B,D,E,G,F}
+
+Dequeue G -> neighbor F already in queue, B visited. Queue = [F]
+
+Dequeue F -> all visited, queue empty.
+
+BFS order: A, C, B, D, E, G, F
